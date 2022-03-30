@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from "react-dom";
-
+import .babelrc from '.babelrc';
+import .gitignore from '.gitignore'
 
 class App extends React.Component {
   constructor() {
@@ -22,6 +23,7 @@ class App extends React.Component {
       <div className="App">
         <button id='click' onClick={this.createText}>Click</button>
         {this.state.isShow && <p id='para'>Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy</p>}
+        
       </div>
     );
   }
