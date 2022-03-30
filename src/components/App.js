@@ -1,33 +1,25 @@
 import React, { Component } from 'react';
 import ReactDOM from "react-dom";
-import .babelrc from '.babelrc';
-import .gitignore from '.gitignore'
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      isShow: false
+
+funtion App() {
+  const [renderPara, setRenderPara] = useState(false);
+  
+  const buttonClickHandler = () => {
+    setRenderPara(true);
+  }
+  
+  const renderParaOrButton = () => {
+    if(renderPara) {
+      return <p id="para">Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy</p>
+    } else {
+      return <button id="click" onClick={buttonClickHandler}>Click Me,/button>
     }
-    this.createText = this.createText.bind(this);
   }
-
-
-  createText() {
-    this.setState({ isShow: true }) 
-  }
-
-
-  render() {
-    return (
-      <div className="App">
-        <button id='click' onClick={this.createText}>Click</button>
-        {this.state.isShow && <p id='para'>Hello, I've learnt to use the full-stack evaluation tool. This makes me so happy</p>}
-        
-      </div>
-    );
-  }
+  return {
+    <div id="main">
+    {renderParaOrButton()}
+</div>
+};
 }
-
-ReactDOM.render(<App />, document.getElementById('app'))
-export default App;
+export default App;s
