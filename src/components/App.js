@@ -22,4 +22,4 @@ funtion App() {
 </div>
 };
 }
-export default App;s
+export default App;
